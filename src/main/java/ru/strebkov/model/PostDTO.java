@@ -1,17 +1,15 @@
 package ru.strebkov.model;
 
-public class Post {
+public class PostDTO {
     private long id;
     private String content;
-    private boolean removed;
 
-    public Post() {
+    public PostDTO() {
     }
 
-    public Post(long id, String content) {
+    public PostDTO(long id, String content) {
         this.id = id;
         this.content = content;
-        this.removed = isRemoved();
     }
 
     public long getId() {
@@ -28,12 +26,5 @@ public class Post {
 
     public void setContent(String content) {
         this.content = content;
-    }
-
-    public void setRemoved(boolean removed) {
-        this.removed = removed;
-    }
-    public boolean isRemoved (){
-        return removed;
     }
 }

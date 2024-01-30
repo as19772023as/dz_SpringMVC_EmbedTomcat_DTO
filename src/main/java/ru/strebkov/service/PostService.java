@@ -3,16 +3,20 @@ package ru.strebkov.service;
 import org.springframework.stereotype.Service;
 import ru.strebkov.exception.NotFoundException;
 import ru.strebkov.model.Post;
-import ru.strebkov.repository.PostRepository;
+import ru.strebkov.model.PostDTO;
+import ru.strebkov.repository.PostRepositoryInterface;
+import org.modelmapper.ModelMapper;
 
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 
 @Service
 public class PostService {
-    private final PostRepository repository;
+    private final PostRepositoryInterface repository;
+//    protected   ModelMapper modelMapper;
 
-    public PostService(PostRepository repository) {
+    public PostService(PostRepositoryInterface repository) {
         this.repository = repository;
     }
 
@@ -31,4 +35,5 @@ public class PostService {
     public void removeById(long id) {
         repository.removeById(id);
     }
+
 }
